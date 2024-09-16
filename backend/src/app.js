@@ -1,11 +1,13 @@
 const express = require("express");
 const morgan = require("morgan");
+const cors = require('cors');
 const createError = require("http-errors");
 const { authRouter } = require("./routes/auth.routes");
 require("dotenv").config();
 require("./config/init_db");
 const port = process.env.PORT || 8080;
 const app = express();
+app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
