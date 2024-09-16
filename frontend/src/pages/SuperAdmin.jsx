@@ -17,6 +17,7 @@ const SuperAdmin = () => {
             <button onClick={() => navigate('/login')}>Go Back</button>
             <button onClick={() => {
                 localStorage.clear();
+                navigate('/login');
             }}>Logout</button>
         </div>
     </div>
