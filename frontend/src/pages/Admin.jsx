@@ -13,7 +13,13 @@ const Admin = () => {
   return (
     <div>
         <h1 style={{margin: '10px', textAlign: 'center'}}>Welcome Admin</h1>
-        <button onClick={() => navigate('/login')}>Go Back</button>
+        <div style={{display:'flex', gap: '10px', justifyContent: 'space-evenly'}}>
+            <button onClick={() => navigate('/login')}>Go Back</button>
+            <button onClick={() => {
+                localStorage.clear();
+                navigate('/login');
+            }}>Logout</button>
+        </div>
     </div>
   )
 }

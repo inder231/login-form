@@ -13,7 +13,12 @@ const SuperAdmin = () => {
   return (
     <div>
         <h1 style={{margin: '10px', textAlign: 'center'}}>Welcome SuperAdmin</h1>
-        <button onClick={() => navigate('/login')}>Go Back</button>
+        <div style={{display:'flex', gap: '10px', justifyContent: 'space-evenly'}}>
+            <button onClick={() => navigate('/login')}>Go Back</button>
+            <button onClick={() => {
+                localStorage.clear();
+            }}>Logout</button>
+        </div>
     </div>
   )
 }

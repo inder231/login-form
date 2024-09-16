@@ -12,6 +12,7 @@ const Login = () => {
   });
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   
   const handleChange = (e) => {
@@ -210,7 +211,8 @@ const Login = () => {
         >
           <input
             type="submit"
-            name="Submit"
+            disabled={loading}
+            name={loading ? "loading..." : "Submit"}
             style={{
               width: "100%",
               padding: "8px 12px",
