@@ -26,6 +26,7 @@ const Login = () => {
 
     const handleLogin = async () => {
         try {
+          setLoading(true);
             const response = await axios.post(`${API_ENDPOINT}`, formData);
             if (response.status === 200) {
                 const data = response.data;
@@ -49,6 +50,8 @@ const Login = () => {
             }else{
                 setError(error.message);
             }
+        }finally {
+          setLoading(false);
         }
     };
     
